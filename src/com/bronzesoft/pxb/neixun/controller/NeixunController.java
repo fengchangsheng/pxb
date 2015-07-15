@@ -17,7 +17,6 @@ import com.bronzesoft.pxb.common.Jsons;
 import com.bronzesoft.pxb.neixun.model.NeixunProject;
 import com.bronzesoft.pxb.neixun.service.INeixunService;
 import com.bronzesoft.pxb.platform.core.controller.BaseController;
-
 @Controller
 @RequestMapping("/neixun")
 public class NeixunController extends BaseController {
