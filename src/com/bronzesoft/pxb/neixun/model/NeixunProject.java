@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.bronzesoft.pxb.platform.core.model.BaseModel;
@@ -21,6 +22,18 @@ public class NeixunProject extends BaseModel {
 	
 	@Column(name = "EndTime")
 	private Date endTime;
+	
+	public NeixunProject() {
+		super();
+	}
+
+	public NeixunProject(String name, Date startTime, Date endTime) {
+		this.name = name;
+		this.startTime = startTime;
+		this.endTime = endTime;
+	}
+
+
 
 	public String getName() {
 		return name;

@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bronzesoft.pxb.platform.core.dao.IDao;
 import com.bronzesoft.pxb.platform.exception.DBException;
@@ -22,7 +25,9 @@ public class Dao implements IDao {
 	private SessionFactory sessionFactory;
 
 	private Session getSession() {
-		return sessionFactory.getCurrentSession();
+		Session session = sessionFactory.getCurrentSession();
+		System.out.println(session==null);
+		return session;
 	}
 	
 	private Session openSession() {

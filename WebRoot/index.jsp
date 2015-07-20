@@ -89,20 +89,47 @@
 	<label>数据校验</label>
 		<ul>
 			<li>
-				<a id="validateNoErrors" class="textLink" href="<c:url value="/validate?number=3&date=2029-07-04" />">Validate, no errors</a>
+				<a id="validateNoErrors" class="textLink" href="<c:url value="/validate?number=4&date=2025-07-04" />">Validate, no errors</a>
 			</li>
 			<li>
-				<a id="validateErrors" class="textLink" href="<c:url value="/validate?number=3&date=2010-07-01" />">Validate, errors</a>
+				<a id="validateErrors" class="textLink" href="<c:url value="/validate?number=6&date=2010-07-01" />">Validate, errors</a>
+			</li>
+		</ul>	
+	</div>
+	
+	
+		
+	<div class="container">
+	<label>----------------------------------------------------</label></br>
+	<label>根据模板导入数据</label>
+		<ul>
+			<li>
+				<input type="button" id="btn" value="点击导入模板数据">
+			</li>
+		</ul>	
+	</div>
+	
+	<div class="container">
+	<label>----------------------------------------------------</label></br>
+	<label>二维码显示区域</label>
+		<ul>
+			<li id="li">
+				<img alt="查询网站" src="img/1437124993.png">
 			</li>
 		</ul>	
 	</div>
 	<script>
 	$(function(){
 		$("#btn1").bind("click",test);
+		$("#btn").bind("click",imp);
 	})
 	
 	function suc(data){
 		$("#leb").html(data);
+	}
+	
+	function success(data){
+		alert(data);
 	}
 	
 	function test(){
@@ -110,6 +137,17 @@
 		var params = "test=2";
 		pxb.call(url,params,suc);
 	}
+	
+	function imp(){
+		var url = "imp/doimp";
+		pxb.call(url,null,success);
+	}
+	
+	function getMa(){
+		var url = "imp/read";
+		pxb.call(url,null,success);
+	}
+	
 	
 	</script>
 </body>

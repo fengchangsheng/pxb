@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.bronzesoft.pxb.common.Strings;
 import com.bronzesoft.pxb.neixun.model.NeixunProject;
 import com.bronzesoft.pxb.neixun.service.INeixunService;
@@ -13,12 +15,12 @@ public class NeixunService implements INeixunService {
 
 	@Resource(name = "dao")
 	private IDao dao;
-
+	
+	@Transactional
 	public String saveNeixunProject(NeixunProject project) {
 		if (project != null) {
 			project.setId(Strings.getID());
 			dao.saveObject(project);
-			
 			return project.getId();
 		}
 		return null;

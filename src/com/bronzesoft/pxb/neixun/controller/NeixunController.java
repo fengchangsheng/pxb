@@ -1,5 +1,6 @@
 package com.bronzesoft.pxb.neixun.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -51,6 +52,7 @@ public class NeixunController extends BaseController {
 	@RequestMapping(value="/search2")
 	public ModelAndView searchProject2() {
 		try {
+			
 			List<NeixunProject> projects = neixunService.searchNeixunProject(null);
 //			ModelAndView  mv = new ModelAndView();
 //			mv.addObject("projects", projects);
