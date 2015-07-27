@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -17,11 +18,13 @@ import com.bronzesoft.pxb.common.validate.JavaBean;
 public class ValidateController {
 
 	@RequestMapping("/validate")
-	public @ResponseBody String validate(@Valid JavaBean bean, BindingResult result) {
+	public  String validate(@Valid @ModelAttribute("bean") JavaBean bean, BindingResult result) {
 		if (result.hasErrors()) {
-			return "Object has validation errors";
+			return "index";
+//			return "Object has validation errors";
 		} else {
-			return "No errors";
+			return "index";
+//			return "No errors";
 		}
 	}
 

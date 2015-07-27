@@ -1,5 +1,9 @@
 <%@ include file="/common/taglib.jsp"%>
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="UTF-8"%>
+ 
+ 
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+ 
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/bootstrap.min.css'/>"/>
@@ -89,11 +93,17 @@
 	<label>数据校验</label>
 		<ul>
 			<li>
-				<a id="validateNoErrors" class="textLink" href="<c:url value="/validate?number=4&date=2025-07-04" />">Validate, no errors</a>
+				<a id="validateNoErrors" class="textLink" href="<c:url value="/validate?date=2025-07-04" />">Validate, no errors</a>
 			</li>
 			<li>
 				<a id="validateErrors" class="textLink" href="<c:url value="/validate?number=6&date=2010-07-01" />">Validate, errors</a>
 			</li>
+				<form:form commandName="bean"> 
+				  <form:errors path="*" cssStyle="color:red"></form:errors><br/> 
+				</form:form> 		 
+ 
+ 
+
 		</ul>	
 	</div>
 	

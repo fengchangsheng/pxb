@@ -11,7 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class JavaBean {
 	
-	@NotNull
+	@NotNull(message="number不能为空")
 	@Max(5)
 	private Integer number;
 
